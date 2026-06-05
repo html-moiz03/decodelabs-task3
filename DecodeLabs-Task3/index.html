@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>The Coastal Spoon - Fine Coastal Dining, Islamabad</title>
+        <link rel="icon" type="image/jpg" href="images/Logo.jpg">
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h3>Your Order 🛒</h3>
+                <button class="cart-close" id="cart-close">✕</button>
+            </div>
+            <ul class="cart-items" id="cart-items">
+                <li class="cart-empty">No items in cart.</li>
+            </ul>
+            <div class="cart-footer">
+                <p class="cart-total">Total: <span id="cart-total">₨ 0</span></p>
+                <button class="btn btn-primary cart-checkout">Place order</button>
+            </div>
+        </div>
+
+        <button class="cart-toggle" id="cart-toggle" aria-label="Open Cart">
+            🛒 <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <header class="site-header">
+            <div class="container header-inner">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">🐚</span>
+                    <span class="logo-text">The Coastal Spoon</span>
+                </div>
+                <nav class="primary-nav" aria-label="Primary navigation">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#menu" class="nav-link">Menu</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <button
+                    class="js-dark-toggle dark-toggle"
+                    id="dark-toggle"
+                    aria-label="Toggle dark mode"
+                    aria-pressed="false"
+                >
+                    <span class="dark-toggle-icon">🌙</span>
+                </button>
+                <button
+                    class="hamburger"
+                    popovertarget="mobile-menu"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                >
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+            <nav
+                id="mobile-menu"
+                class="mobile-nav"
+                popover
+                aria-label="Mobile navigation menu"
+            >
+                <button
+                    class="mobile-nav-close"
+                    popovertarget="mobile-menu"
+                    popovertargetaction="hide"
+                    aria-label="Close navigation menu"
+                >✕</button>
+                <ul class="mobile-nav-list">
+                    <li><a href="#home"    class="mobile-nav-link" popovertarget="mobile-menu" popovertargetaction="hide">Home</a></li>
+                    <li><a href="#about"   class="mobile-nav-link" popovertarget="mobile-menu" popovertargetaction="hide">About</a></li>
+                    <li><a href="#menu"    class="mobile-nav-link" popovertarget="mobile-menu" popovertargetaction="hide">Menu</a></li>
+                    <li><a href="#contact" class="mobile-nav-link" popovertarget="mobile-menu" popovertargetaction="hide">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+
+        <main>
+        
+        <!--Hero Section-->
+
+            <section class="hero" id="home" aria-label="Hero banner">
+                <div class="hero-overlay" aria-hidden="true"></div>
+                <div class="container hero-content">
+                    <h1 class="hero-title">Where the Sea<br/>Meets the Table</h1>
+                    <p class="hero-sub">Fresh coastal cuisine in the heart of Blue Area, Islamabad</p>
+                    <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
+                </div>
+            </section>
+
+        <!--About Section-->
+            
+            <section class="about-section" id="about" aria-labelledby="about-heading">
+                <div class="container about-grid">
+
+                    <div class="about-image-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&h=500&fit=crop"
+                            alt="Beautifully plated coastal seafood dish with garnishes"
+                            width="700"
+                            height="500"
+                            class="about-img"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <article class="about-text">
+                        <h2 id="about-heading" class="section-title">Our Story</h2>
+                        <p>
+                            The Coastal Spoon was born from a simple belief: the finest ingredients,
+                            treated with respect, need nothing more than honest cooking. Nestled in the
+                            vibrant Blue Area of Islamabad, we bring the flavours of the Arabian Sea
+                            straight to your plate.
+                        </p>
+                        <p>
+                            Every dish is crafted daily using sustainably sourced seafood and locally
+                            grown produce, celebrating the rich culinary heritage of Pakistan's coastline.
+                        </p>
+                        <ul class="about-highlights">
+                            <li>✦ Sustainably sourced seafood</li>
+                            <li>✦ Locally grown produce</li>
+                            <li>✦ Authentic coastal flavors</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </section>
+
+            <!--Menu Section-->
+
+            <section class="menu-section" id="menu" aria-labelledby="menu-heading">
+                <div class="container">
+                    <h2 id="menu-heading" class="section-title text-center">Our Menu</h2>
+                    <p class="section-sub text-center"> Crafted fresh every morning - served with love every evening</p>
+                    <div class="filter-bar" role="group" aria-label="filter menu by category">
+                        <button class="js-filter filter-btn is-active" data-filter="all">All</button>
+                        <button class="js-filter filter-btn" data-filter="seafood">Seafood</button>
+                        <button class="js-filter filter-btn" data-filter="veggie">Veggie</button>
+                        <button class="js-filter filter-btn" data-filter="pasta">Pasta</button>
+                        <button class="js-filter filter-btn" data-filter="nonveg">NonVeg</button>
+                    </div>
+                    <div class="menu-grid">
+
+                        <article class="menu-card" data-category="nonveg">
+                            <img
+                                src="images/Beef-Steak.jpg"
+                                alt="200g prime rump, seasoned with black pepper rub, served with fries."
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Beef Steak</h3>
+                                <p class="card-desc">200g prime rump, seasoned with black pepper rub, served with fries.</p>
+                                <span class="card-price">Rs. 1,980</span>
+                                <button class="btn btn-add-cart" aria-label="Add Beef Steak to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="nonveg">
+                            <img
+                                src="images/Chicken-Karahi.jpg"
+                                alt="Lahori-style karahi with fresh tomatoes, green chillies & desi ghee."
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Chicken Karahi</h3>
+                                <p class="card-desc">Lahori-style karahi with fresh tomatoes, green chillies & desi ghee.</p>
+                                <span class="card-price">Rs. 2,190</span>
+                                <button class="btn btn-add-cart" aria-label="Add Chicken Karahi to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="seafood">
+                            <img
+                                src="images/Karahi-Prawns.jpg"
+                                alt="Grilled Karahi prawns on a sizzling platter with lemon wedges and herbs"
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Grilled Karahi Prawns</h3>
+                                <p class="card-desc">Jumbo prawns marinated in a saffron butter, grilled over charcoal and served with garlic aioli.</p>
+                                <span class="card-price">Rs. 1,850</span>
+                                <button class="btn btn-add-cart" aria-label="Add Grilled Karahi Prawns to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="seafood">
+                            <img
+                                src="images/Fried-Calamari.jpg"
+                                alt="Golden-fried squid rings with buttermilk batter & tartar dip"
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Fried Calamari</h3>
+                                <p class="card-desc">Crispy squid rings served with a tangy buttermilk dipping sauce.</p>
+                                <span class="card-price">Rs. 1,200</span>
+                                <button class="btn btn-add-cart" aria-label="Add Fried Calamari to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="veggie">
+                            <img
+                                src="images/Falafel.jpg"
+                                alt="Crispy chickpea falafel with hummus, pickles and pita bread"
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Falafel</h3>
+                                <p class="card-desc">Crispy chickpea falafel served with creamy hummus, pickled vegetables and warm pita bread.</p>
+                                <span class="card-price">Rs. 900</span>
+                                <button class="btn btn-add-cart" aria-label="Add Falafel to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="pasta">
+                            <img
+                                src="images/Pasta-Salad.jpg"
+                                alt="Fresh pasta tossed with seasonal vegetables and lemon vinaigrette"
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Pasta Salad</h3>
+                                <p class="card-desc">Al dente pasta tossed with seasonal vegetables, fresh herbs
+                                and a zesty lemon vinaigrette.</p>
+                                <span class="card-price">Rs. 1,500</span>
+                                <button class="btn btn-add-cart" aria-label="Add Pasta Salad to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="seafood">
+                            <img
+                                src="images/Grilled-Salmon.jpg"
+                                alt="Atlantic Salmon fillet, lemon butter, garlic herbs & steamed greens"
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Grilled Salmon</h3>
+                                <p class="card-desc">Atlantic Salmon fillet, lemon butter, garlic herbs & steamed greens.</p>
+                                <span class="card-price">Rs. 2,200</span>
+                                <button class="btn btn-add-cart" aria-label="Add Grilled Salmon to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="pasta">
+                            <img
+                                src="images/Chicken-Alfredo-Pasta.jpg"
+                                alt="Creamy parmesan Alfredo with grilled chicken strips"
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Chicken Alfredo Pasta</h3>
+                                <p class="card-desc">Creamy parmesan Alfredo sauce tossed with fettuccine and grilled chicken strips.</p>
+                                <span class="card-price">Rs. 1,650</span>
+                                <button class="btn btn-add-cart" aria-label="Add Chicken Alfredo Pasta to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="veggie">
+                            <img
+                                src="images/Margherita-Pizza.jpg"
+                                alt="Wood-fired dough, San Marzano tomato sauce, fresh mozzarella, basil"
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Margherita Pizza</h3>
+                                <p class="card-desc">Wood-fired dough, San Marzano tomato sauce, fresh mozzarella, basil.</p>
+                                <span class="card-price">Rs. 1,200</span>
+                                <button class="btn btn-add-cart" aria-label="Add Margherita Pizza to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="nonveg">
+                            <img
+                                src="images/Seekh-Kebab-Platter.jpg"
+                                alt="Minced beef seekh kebabs with raita, mint chutney & naan. "
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Seekh Kebab Platter</h3>
+                                <p class="card-desc">Minced beef seekh kebabs with raita, mint chutney & naan.</p>
+                                <span class="card-price">Rs. 1,200</span>
+                                <button class="btn btn-add-cart" aria-label="Add Seekh Kebab Platter to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="veggie">
+                            <img
+                                src="images/Paneer-Tikka.jpg"
+                                alt="Marinated cottage cheese cubes grilled in a tandoor, served with chutney. "
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Paneer Tikka</h3>
+                                <p class="card-desc">Marinated cottage cheese cubes grilled in a tandoor, served with chutney.</p>
+                                <span class="card-price">Rs. 1,200</span>
+                                <button class="btn btn-add-cart" aria-label="Add Paneer Tikka to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card" data-category="veggie">
+                            <img
+                                src="images/Greek-Salad.jpg"
+                                alt="Fresh, vibrant, and full of Mediterranean flavor. Made with crisp lettuce, juicy tomatoes, crunchy cucumbers, red onions, olives, and creamy feta cheese. "
+                                width="400"
+                                height="280"
+                                loading="lazy"
+                            />
+                            <div class="card-body">
+                                <h3 class="card-title">Greek Salad</h3>
+                                <p class="card-desc">Fresh, vibrant, and full of Mediterranean flavor. Made with crisp lettuce, juicy tomatoes, crunchy cucumbers, red onions, olives, and creamy feta cheese.</p>
+                                <span class="card-price">Rs. 1,200</span>
+                                <button class="btn btn-add-cart" aria-label="Add Greek Salad to cart">
+                                    Add to Cart 🛒
+                                </button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why us -->
+
+            <section class="features-section" aria-labelledby="features-heading">
+                <div class="container">
+                    <h2 id="features-heading" class="section-title text-center">Why Dine With Us?</h2>
+
+                    <div class="features-grid">
+
+                        <article class="feature-card">
+                            <div class="feature-icon" aria-hidden="true">🌊</div>
+                            <h3>Ocean-Fresh Daily</h3>
+                            <p>Our Seafood arrives morning directly from trusted coastal suppliers in Karachi and Gawadar.</p>
+                        </article>
+
+                        <article class="feature-card">
+                            <div class="feature-icon" aria-hidden="true">👩‍🍳</div>
+                            <h3>Masterful Chefs</h3>
+                            <p>Our culinary team combines traditional techniques with modern flair to create unforgettable dishes.</p>
+                        </article>
+
+                        <article class="feature-card">
+                            <div class="feature-icon" aria-hidden="true">🍃</div>
+                            <h3>Sustainable Practices</h3>
+                            <p>We are committed to sustainability, sourcing responsibly and minimizing our environmental impact.</p>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section" aria-labelledby="faq-heading">
+                <div class="container">
+                    <h2 id="faq-heading" class="section-title text-center">Frequently Asked Questions</h2>
+                    <p class="section-sub text-center">Everything you need to know before you visit</p>
+
+                    <div class="faq-list" id="faq-list">
+
+                        <article class="faq-item">
+                            <button class="js-faq-trigger faq-trigger" aria-expanded="false">
+                                <span class="faq-num">1</span>
+                                <span class="faq-question">Do you take reservations?</span>
+                                <span class="faq-arrow" aria-hidden="true">▾</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                <p>Yes! We strongly recommend reserving a table, especially on weekends. You can call us at +92 51 123 4567 or walk in — we always keep a few tables open for walk-in guests.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="js-faq-trigger faq-trigger" aria-expanded="false">
+                                <span class="faq-num">2</span>
+                                <span class="faq-question">Is there a vegetarian or vegan menu?</span>
+                                <span class="faq-arrow" aria-hidden="true">▾</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                <p>Absolutely. Our Falafel and Pasta Salad are fully vegetarian. We also have a dedicated plant-based section — just ask your server and we'll guide you through the options.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="js-faq-trigger faq-trigger" aria-expanded="false">
+                                <span class="faq-num">3</span>
+                                <span class="faq-question">Where are you located?</span>
+                                <span class="faq-arrow" aria-hidden="true">▾</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                <p>We are located in Blue Area, Islamabad — right in the heart of the city. Parking is available on the street and in the nearby multi-storey car park.</p>
+                            </div>
+                        </article>
+
+                         <article class="faq-item">
+                            <button class="js-faq-trigger faq-trigger" aria-expanded="false">
+                                <span class="faq-num">4</span>
+                                <span class="faq-question">Do you cater for large groups or events?</span>
+                                <span class="faq-arrow" aria-hidden="true">▾</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                <p>Yes — we love hosting private dinners, corporate lunches, and special occasions. Email us at hello@coastalspoon.pk with your event details and we will put together a custom package for you.</p>
+                            </div>
+                        </article>
+
+                        <article class="faq-item">
+                            <button class="js-faq-trigger faq-trigger" aria-expanded="false">
+                                <span class="faq-num">5</span>
+                                <span class="faq-question">What payment methods do you accept?</span>
+                                <span class="faq-arrow" aria-hidden="true">▾</span>
+                            </button>
+                            <div class="faq-answer" hidden>
+                                <p>We accept cash, all major debit and credit cards, and mobile payments including Easypaisa and JazzCash.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+
+        <footer class="site-footer" id="contact">
+            <div class="container footer-grid">
+
+                <div class="footer-brand">
+                    <span class="logo-icon" aria-hidden="true">🐚</span>
+                    <span class="logo-text footer-logo-text">The Coastal Spoon</span>
+                    <p class="footer-tagline">Fine coastal dining in Blue Area, Islamabad.</p>
+                </div>
+
+                <address class="footer-contact">
+                    <h3 class="footer-heading">Find Us</h3>
+                    <p>📍 Blue Area, Islamabad, Pakistan</p>
+                    <p>📞 <a href="tel:+92511234567">+92 51 123 4567</a></p>
+                    <p>✉ <a href="mailto:hello@coastalspoon.pk">hello@coastalspoon.pk</a></p>
+                </address>
+
+                <div class="footer-hours">
+                    <h3 class="footer-heading">Opening Hours</h3>
+                    <p>Monday - Friday: 12 PM - 11 PM</p>
+                    <p>Saturday - Sunday: 11 AM - 12 AM</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 The Coastal Spoon. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
