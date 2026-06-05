@@ -1,6 +1,6 @@
 # decodelabs-task3
 
-# 🐚 The Coastal Spoon — Restaurant Website
+# 🐚 The Coastal Spoon — Restaurant Website ( FAQ and Dark Mode added)
 
 A fully responsive, interactive restaurant website built as part of the
 DecodeLabs Frontend Development Internship (Batch 2026).
